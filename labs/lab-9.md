@@ -21,9 +21,9 @@ Coverage
 
 **Step 5.** Add the following variables and their values.
 
-- coverageMinThreshold: 80
-- coverageOutputFile: CoverageResults\coverage.cobertura.xml
-- coverageOutputFormat: cobertura
+- coverageMinThreshold: `80`
+- coverageOutputFile: `CoverageResults\coverage.cobertura.xml`
+- coverageOutputFormat: `cobertura`
 
 **Step 6.** Save the Coverage Variable Group.
 
@@ -33,9 +33,9 @@ Coverage
 
 **Step 9.** Add a new variable the following configuration.
 
-- Name: testProjectName
-- Value: WebAPI.Tests
-- Settable a queue time: Not Checked
+- Name: `testProjectName`
+- Value: `WebAPI.Tests`
+- Settable a queue time: `Not Checked`
 
 **Step 10.** Click `Variable group` in the left pane.
 
@@ -51,8 +51,8 @@ run coverlet $(System.DefaultWorkingDirectory)\$(testProjectName)\bin\Debug\netc
 
 **Step 14.** Within the Validate Code Coverage with Coverlet Agent Job, update the `arguments` of the Publish Coverlet code coverage task with the following values:
 
-- Display name: Publish Coverlet code coverage from $(System.DefaultWorkingDirectory)\$(coverageOutputFile)
-- Summary file: $(System.DefaultWorkingDirectory)\$(coverageOutputFile)
+- Display name: Publish Coverlet code coverage from `$(System.DefaultWorkingDirectory)\$(coverageOutputFile)`
+- Summary file: `$(System.DefaultWorkingDirectory)\$(coverageOutputFile)`
 
 **Step 15.** Save an queue a pipeline run each code coverage Agent Job. The Default Tool Agent Job should pass, and the Coverlet Agent Job should failed because of the 80% threshold. Verify this is the case.
 
